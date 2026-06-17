@@ -1,0 +1,860 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hair Transplant Workshop by GeVa | Presented by PILULA MedPlanner</title>
+  <meta name="description" content="Aprende Microimplante Capilar con pacientes reales. Workshop hands-on by GeVa, presentado por PILULA MedPlanner.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --burgundy: #660033;
+      --gold: #C4A64A;
+      --black: #080808;
+      --white: #FFFFFF;
+      --ink: #111111;
+      --muted: #6c6c6c;
+      --line: rgba(196, 166, 74, .32);
+      --soft: #f6f5f2;
+      --smoke: #141414;
+      --radius: 8px;
+      --display: "DM Serif Display", Georgia, "Times New Roman", serif;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--white);
+      color: var(--ink);
+      font-family: var(--sans);
+      letter-spacing: 0;
+    }
+    img, video { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    .page { overflow: hidden; }
+    .wrap { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1 {
+      font-family: var(--display);
+      font-size: clamp(46px, 6.15vw, 96px);
+      line-height: .94;
+      font-weight: 400;
+      max-width: 900px;
+      text-shadow: 0 18px 48px rgba(0,0,0,.42);
+    }
+    h2 {
+      font-family: var(--display);
+      font-size: clamp(36px, 5vw, 72px);
+      line-height: .98;
+      font-weight: 400;
+    }
+    h3 { font-size: 22px; line-height: 1.15; font-weight: 750; }
+    p { color: var(--muted); font-size: 17px; line-height: 1.65; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      border: 1px solid var(--gold);
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 14px;
+      transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn.primary { background: var(--gold); color: var(--black); }
+    .btn.secondary { color: var(--white); border-color: rgba(196,166,74,.64); background: rgba(255,255,255,.03); }
+    .btn.dark { background: var(--black); border-color: var(--black); color: var(--white); }
+    .btn.ghost { color: var(--black); border-color: rgba(8,8,8,.22); }
+
+    .nav {
+      position: fixed;
+      z-index: 20;
+      top: 0;
+      left: 0;
+      right: 0;
+      border-bottom: 1px solid rgba(196,166,74,.18);
+      background: rgba(8,8,8,.88);
+      backdrop-filter: blur(18px);
+    }
+    .nav-inner {
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .brand-stack { display: flex; align-items: center; gap: 13px; min-width: 0; }
+    .workshop-logo {
+      width: 158px;
+      max-height: 46px;
+      object-fit: contain;
+      filter: drop-shadow(0 8px 20px rgba(0,0,0,.35));
+      opacity: .92;
+    }
+    .presented {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,.78);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      white-space: nowrap;
+    }
+    .presented img { width: 104px; padding: 0; background: transparent; border-radius: 0; opacity: .94; }
+    .nav-actions { display: flex; align-items: center; gap: 10px; }
+    .nav .btn { min-height: 42px; padding: 0 19px; font-size: 13px; }
+
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: grid;
+      align-items: end;
+      background: var(--black);
+      color: var(--white);
+      padding: 104px 0 42px;
+    }
+    .hero-media {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .hero-media img, .hero-media video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .hero-media video { opacity: .22; }
+    .hero-media img { position: absolute; inset: 0; opacity: .94; }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(8,8,8,.76), rgba(8,8,8,.52) 46%, rgba(8,8,8,.16)),
+        linear-gradient(0deg, rgba(8,8,8,.76), transparent 36%);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      gap: 30px;
+    }
+    .hero-topline {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      color: rgba(255,255,255,.82);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .hero-topline span { color: var(--gold); }
+    .hero-copy { display: grid; gap: 18px; max-width: 760px; }
+    .hero-copy p { color: rgba(255,255,255,.86); font-size: clamp(19px, 2.15vw, 27px); line-height: 1.38; text-shadow: 0 10px 28px rgba(0,0,0,.35); }
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: -2px;
+      margin-bottom: 2px;
+    }
+    .hero-badge {
+      border: 1px solid rgba(196,166,74,.46);
+      border-radius: 999px;
+      background: rgba(8,8,8,.46);
+      color: rgba(255,255,255,.9);
+      min-height: 36px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 14px;
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      backdrop-filter: blur(12px);
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+    .hero-foot {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 24px;
+      align-items: end;
+      border-top: 1px solid rgba(255,255,255,.18);
+      padding-top: 24px;
+    }
+    .hero-note { color: rgba(255,255,255,.68); max-width: 620px; font-size: 14px; line-height: 1.6; }
+    .mini-card {
+      justify-self: end;
+      border: 1px solid var(--line);
+      background: rgba(8,8,8,.58);
+      padding: 18px;
+      border-radius: var(--radius);
+      max-width: 370px;
+    }
+    .mini-card strong { color: var(--gold); display: block; margin-bottom: 7px; }
+    .mini-card p { color: rgba(255,255,255,.72); font-size: 14px; line-height: 1.55; }
+
+    .trust {
+      background: var(--black);
+      color: var(--white);
+      border-top: 1px solid rgba(196,166,74,.32);
+      border-bottom: 1px solid rgba(196,166,74,.24);
+    }
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .stat {
+      min-height: 140px;
+      padding: 30px 24px;
+      border-right: 1px solid rgba(196,166,74,.2);
+      background: linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.01));
+    }
+    .stat:last-child { border-right: 0; }
+    .stat b {
+      display: block;
+      color: var(--gold);
+      font-family: var(--display);
+      font-size: clamp(40px, 5vw, 72px);
+      line-height: .9;
+      font-weight: 500;
+    }
+    .stat span { display: block; margin-top: 12px; font-weight: 800; text-transform: uppercase; font-size: 12px; letter-spacing: .12em; }
+
+    section { padding: 122px 0; }
+    .section-head {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 50px;
+      align-items: start;
+      margin-bottom: 50px;
+    }
+    .section-head p { max-width: 650px; }
+    .dark {
+      background: var(--black);
+      color: var(--white);
+    }
+    .dark p { color: rgba(255,255,255,.68); }
+    .soft { background: var(--soft); }
+    .black-panel {
+      background: var(--black);
+      color: var(--white);
+    }
+    .black-panel p { color: rgba(255,255,255,.7); }
+
+    .editorial-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 26px;
+      align-items: stretch;
+    }
+    .photo-frame {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: var(--black);
+      min-height: 420px;
+    }
+    .photo-frame img, .photo-frame video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .photo-frame.tall { min-height: 620px; }
+    .caption {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,.35);
+      color: rgba(255,255,255,.86);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .stack { display: grid; gap: 26px; }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .card {
+      border: 1px solid rgba(8,8,8,.12);
+      border-radius: var(--radius);
+      padding: 26px;
+      background: var(--white);
+    }
+    .dark .card {
+      background: rgba(255,255,255,.055);
+      border-color: rgba(255,255,255,.12);
+    }
+    .card .num {
+      color: var(--gold);
+      font-family: var(--display);
+      font-size: 42px;
+      line-height: 1;
+      margin-bottom: 22px;
+      display: block;
+    }
+    .card p { margin-top: 12px; font-size: 15px; line-height: 1.55; }
+
+    .geva-strip {
+      display: grid;
+      grid-template-columns: .7fr 1.3fr;
+      gap: 44px;
+      align-items: center;
+      padding: 34px;
+      border: 1px solid rgba(196,166,74,.5);
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
+    }
+    .geva-strip img { width: 260px; background: transparent; padding: 0; border-radius: 0; }
+    .geva-points {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 32px;
+    }
+
+    .learn-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    .learn-item {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(8,8,8,.14);
+    }
+    .check {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--black);
+      color: var(--gold);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+    }
+    .learn-item b { display: block; margin-bottom: 5px; }
+    .learn-item p { font-size: 14px; line-height: 1.45; }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    .video-card {
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: #111;
+      border: 1px solid rgba(196,166,74,.18);
+      box-shadow: 0 24px 70px rgba(0,0,0,.22);
+    }
+    .video-card video {
+      width: 100%;
+      aspect-ratio: 9 / 14;
+      object-fit: cover;
+      background: #000;
+    }
+    .video-label {
+      padding: 14px 16px 16px;
+      color: rgba(255,255,255,.82);
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .patient-grid { grid-template-columns: repeat(2, minmax(0, 320px)); justify-content: center; }
+
+    .hair-revolution {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 34px;
+      align-items: center;
+    }
+    .mark-panel {
+      min-height: 480px;
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: var(--black);
+      padding: 0;
+    }
+    .mark-panel img { width: 100%; height: 100%; object-fit: cover; opacity: .88; }
+    .mark-panel::after {
+      content: "Hair Revolution";
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 24px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(196,166,74,.55);
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .quote {
+      font-family: var(--display);
+      color: var(--white);
+      font-size: clamp(34px, 4.6vw, 64px);
+      line-height: 1;
+    }
+
+    .volunteer {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+    .volunteer-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 28px;
+    }
+    .volunteer-list div {
+      padding: 18px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(8,8,8,.14);
+      background: var(--white);
+      font-weight: 760;
+    }
+
+    .final {
+      position: relative;
+      color: var(--white);
+      background: var(--black);
+      padding: 120px 0;
+    }
+    .final::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(8,8,8,.95), rgba(8,8,8,.62)),
+        url("assets/workshop/grupo-geva-workshop.jpg") center/cover;
+      opacity: .96;
+    }
+    .final .wrap { position: relative; z-index: 1; }
+    .final-grid {
+      display: grid;
+      grid-template-columns: 1fr .72fr;
+      gap: 36px;
+      align-items: end;
+    }
+    .apply-box {
+      border-radius: var(--radius);
+      border: 1px solid rgba(196,166,74,.55);
+      background: rgba(8,8,8,.78);
+      padding: 26px;
+    }
+    .apply-box h3 { color: var(--gold); margin-bottom: 12px; }
+    .apply-box p { color: rgba(255,255,255,.72); font-size: 15px; }
+    form { display: grid; gap: 12px; margin-top: 20px; }
+    input, select, textarea {
+      width: 100%;
+      min-height: 46px;
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 6px;
+      padding: 12px 14px;
+      background: rgba(255,255,255,.08);
+      color: var(--white);
+      font: inherit;
+      outline: none;
+    }
+    select option { color: var(--black); }
+    textarea { min-height: 92px; resize: vertical; }
+    input::placeholder, textarea::placeholder { color: rgba(255,255,255,.55); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .form-note { color: rgba(255,255,255,.6); font-size: 12px; line-height: 1.45; }
+
+    footer {
+      padding: 30px 0;
+      background: var(--black);
+      color: rgba(255,255,255,.55);
+      border-top: 1px solid rgba(255,255,255,.1);
+      font-size: 12px;
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    footer img { width: 116px; background: transparent; padding: 0; border-radius: 0; opacity: .86; }
+
+    @media (max-width: 900px) {
+      .nav-inner { height: auto; padding: 12px 0; align-items: flex-start; }
+      .brand-stack { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .workshop-logo { width: 150px; }
+      .presented { font-size: 9px; }
+      .presented img { width: 96px; }
+      .nav-actions .secondary { display: none; }
+      .hero { padding-top: 142px; min-height: 760px; }
+      .hero-foot, .section-head, .editorial-grid, .geva-strip, .hair-revolution, .volunteer, .final-grid {
+        grid-template-columns: 1fr;
+      }
+      .mini-card { justify-self: start; }
+      .trust-grid, .cards, .geva-points, .video-grid, .learn-grid { grid-template-columns: 1fr; }
+      .stat { border-right: 0; border-bottom: 1px solid rgba(196,166,74,.32); min-height: 112px; }
+      .stat:last-child { border-bottom: 0; }
+      section { padding: 86px 0; }
+      .photo-frame, .photo-frame.tall { min-height: 360px; }
+      .patient-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (max-width: 560px) {
+      .wrap { width: min(100% - 28px, 1180px); }
+      .nav-actions { display: none; }
+      h1 { font-size: 48px; }
+      .hero-copy p { font-size: 19px; }
+      .hero-actions .btn { width: 100%; }
+      .hero-badge { width: calc(50% - 5px); justify-content: center; padding: 0 8px; }
+      .photo-frame, .photo-frame.tall { min-height: 300px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="nav">
+      <div class="wrap nav-inner">
+        <div class="brand-stack">
+          <img class="workshop-logo" src="assets/logo/hair-transplant-workshop-light.png" alt="Hair Transplant Workshop">
+          <div class="presented">Presented by <img src="assets/logo/pilula-medplanner-light.png" alt="PILULA medplanner"></div>
+        </div>
+        <div class="nav-actions">
+          <a class="btn secondary" href="#pacientes">Soy paciente voluntario</a>
+          <a class="btn primary" href="#aplicar">Solicitar información</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio">
+        <div class="hero-media" aria-hidden="true">
+          <img src="assets/hero/hero-procedimiento-real.jpg" alt="">
+          <video autoplay muted loop playsinline poster="assets/hero/hero-procedimiento-real.jpg">
+            <source src="assets/videos/workshop-hands-on.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="wrap hero-content">
+          <div class="hero-topline">Hair Transplant Workshop by GeVa <span>7ª edición</span></div>
+          <div class="hero-copy">
+            <h1>Aprende Microimplante Capilar con pacientes reales.</h1>
+            <p>Una experiencia inmersiva, médica y hands-on para doctores que quieren dominar el proceso completo del trasplante capilar bajo guía experta.</p>
+            <div class="hero-badges" aria-label="Datos clave del workshop">
+              <span class="hero-badge">60 horas</span>
+              <span class="hero-badge">4 días hands-on</span>
+              <span class="hero-badge">12 médicos</span>
+              <span class="hero-badge">6 pacientes</span>
+            </div>
+            <div class="hero-actions">
+              <a class="btn primary" href="#aplicar">Solicitar información</a>
+              <a class="btn secondary" href="#pacientes">Soy paciente voluntario</a>
+            </div>
+          </div>
+          <div class="hero-foot">
+            <p class="hero-note">Presentado por PILULA MedPlanner. El protagonista es el método, la práctica clínica y la comunidad médica que se forma alrededor del workshop de GeVa.</p>
+            <div class="mini-card">
+              <strong>Cupo limitado</strong>
+              <p>La próxima edición está diseñada para 12 médicos y 6 pacientes voluntarios, con atención cercana, práctica real y acompañamiento directo.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="trust">
+        <div class="wrap trust-grid">
+          <div class="stat"><b>7</b><span>ediciones</span></div>
+          <div class="stat"><b>60</b><span>horas</span></div>
+          <div class="stat"><b>12</b><span>médicos</span></div>
+          <div class="stat"><b>6</b><span>pacientes</span></div>
+        </div>
+      </aside>
+
+      <section>
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">Más que un workshop</div>
+              <h2>Una comunidad médica que practica, corrige y evoluciona junta.</h2>
+            </div>
+            <p>El aprendizaje no se queda en una clase. Cada edición combina criterio clínico, planeación, técnica, observación de casos reales y práctica guiada. La meta es que cada médico salga con más claridad, más confianza y una red profesional activa.</p>
+          </div>
+          <div class="editorial-grid">
+            <div class="photo-frame tall">
+              <img src="assets/workshop/practica-en-aula.jpg" alt="Médicos practicando técnica de microimplante capilar en aula">
+              <div class="caption">Práctica intensiva en aula</div>
+            </div>
+            <div class="stack">
+              <div class="photo-frame">
+                <img src="assets/workshop/grupo-geva-workshop.jpg" alt="Grupo médico del workshop by GeVa">
+                <div class="caption">Comunidad GeVa</div>
+              </div>
+              <div class="photo-frame">
+                <img src="assets/workshop/diseno-linea-capilar.jpg" alt="Diseño de línea capilar durante el workshop">
+                <div class="caption">Diseño y criterio clínico</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="dark">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">Por qué GeVa</div>
+              <h2>Experiencia clínica, metodología y casos reales.</h2>
+            </div>
+            <p>GeVa Medicina Capilar aporta el entorno clínico, los protocolos y la dirección médica. El workshop se construye para formar criterio, no sólo repetir pasos.</p>
+          </div>
+          <div class="geva-strip">
+            <img src="assets/logo/geva-medicina-capilar-light.png" alt="GeVa Medicina Capilar">
+            <div>
+              <h3>El aprendizaje se vuelve quirúrgico cuando el médico entiende el porqué de cada decisión.</h3>
+              <p>Desde valoración y marcaje hasta extracción, clasificación folicular e implantación, la edición está pensada para conectar planeación, técnica y resultado.</p>
+            </div>
+          </div>
+          <div class="geva-points">
+            <div class="card"><span class="num">01</span><h3>Dirección experta</h3><p>Guía médica durante el proceso técnico y clínico.</p></div>
+            <div class="card"><span class="num">02</span><h3>Formato hands-on</h3><p>Práctica progresiva con observación, corrección y repetición.</p></div>
+            <div class="card"><span class="num">03</span><h3>Pacientes reales</h3><p>Casos seleccionados para una formación aplicable y responsable.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="soft">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">Así se vive</div>
+              <h2>De la teoría al campo clínico.</h2>
+            </div>
+            <p>El workshop alterna masterclass, práctica sobre simuladores, observación en cabina y trabajo con pacientes reales. El ritmo es intenso, cercano y profundamente práctico.</p>
+          </div>
+          <div class="editorial-grid">
+            <div class="photo-frame">
+              <video controls playsinline poster="assets/workshop/masterclass-geva.jpg">
+                <source src="assets/videos/aula-workshop.mp4" type="video/mp4">
+              </video>
+              <div class="caption">Marcaje, extracción y clasificación</div>
+            </div>
+            <div class="photo-frame">
+              <img src="assets/workshop/hands-on-implantacion.jpg" alt="Médicas realizando práctica hands-on de implantación capilar">
+              <div class="caption">Hands-on con supervisión</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">Qué aprenderás</div>
+              <h2>El mapa completo del microimplante capilar.</h2>
+            </div>
+            <p>Un programa diseñado para ordenar la técnica desde la consulta hasta el procedimiento, con énfasis en práctica, criterio y seguridad.</p>
+          </div>
+          <div class="learn-grid">
+            <div class="learn-item"><span class="check">✓</span><div><b>Valoración y selección del paciente</b><p>Indicaciones, expectativas, zonas donadora y receptora.</p></div></div>
+            <div class="learn-item"><span class="check">✓</span><div><b>Diseño de línea capilar</b><p>Planeación estética, densidad y naturalidad.</p></div></div>
+            <div class="learn-item"><span class="check">✓</span><div><b>Extracción folicular</b><p>Postura, profundidad, ángulo y manejo del injerto.</p></div></div>
+            <div class="learn-item"><span class="check">✓</span><div><b>Clasificación y conteo</b><p>Organización del equipo y control de unidades foliculares.</p></div></div>
+            <div class="learn-item"><span class="check">✓</span><div><b>Implantación</b><p>Dirección, distribución, ritmo de trabajo y consistencia.</p></div></div>
+            <div class="learn-item"><span class="check">✓</span><div><b>Seguimiento postprocedimiento</b><p>Cuidados, comunicación con paciente y evolución esperada.</p></div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="dark" id="testimonios-medicos">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">Testimonios médicos</div>
+              <h2>Voces de quienes ya vivieron la experiencia.</h2>
+            </div>
+            <p>Médicos de distintas ciudades comparten lo que les dejó el formato hands-on, el acompañamiento y el contacto con casos reales.</p>
+          </div>
+          <div class="video-grid">
+            <div class="video-card"><video controls playsinline preload="metadata" src="assets/testimonios/testimonio-medico-01.mp4"></video><div class="video-label">Testimonio médico 01</div></div>
+            <div class="video-card"><video controls playsinline preload="metadata" src="assets/testimonios/testimonio-medico-02.mov"></video><div class="video-label">Testimonio médico 02</div></div>
+            <div class="video-card"><video controls playsinline preload="metadata" src="assets/testimonios/testimonio-medico-03.mov"></video><div class="video-label">Testimonio médico 03</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="black-panel" id="testimonios-pacientes">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">Testimonios pacientes</div>
+              <h2>Pacientes reales, experiencia real.</h2>
+            </div>
+            <p>La edición integra pacientes voluntarios seleccionados para vivir un proceso acompañado por el equipo médico y por los participantes del workshop.</p>
+          </div>
+          <div class="video-grid patient-grid">
+            <div class="video-card"><video controls playsinline preload="metadata" src="assets/testimonios/testimonio-paciente-01.mov"></video><div class="video-label">Testimonio paciente 01</div></div>
+            <div class="video-card"><video controls playsinline preload="metadata" src="assets/testimonios/testimonio-paciente-02.mov"></video><div class="video-label">Testimonio paciente 02</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="dark">
+        <div class="wrap hair-revolution">
+          <div class="mark-panel">
+            <img src="assets/workshop/grupo-geva-workshop.jpg" alt="Comunidad médica Hair Revolution">
+          </div>
+          <div>
+            <div class="eyebrow">Hair Revolution</div>
+            <h2>Formar parte de Hair Revolution.</h2>
+            <p>Al finalizar, cada médico entra a una comunidad de egresados entrenados bajo la metodología GeVa.</p>
+            <p class="quote" style="margin-top:28px;">Formación que transforma criterio.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="soft">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">Diplomas / generación</div>
+              <h2>No sólo terminas un curso. Te integras a una generación.</h2>
+            </div>
+            <p>Cada edición concluye con médicos que comparten práctica, aprendizaje y comunidad.</p>
+          </div>
+          <div class="editorial-grid">
+            <div class="photo-frame tall">
+              <img src="assets/diplomas/graduacion-diplomas.jpg" alt="Generación de médicos con diplomas del workshop">
+              <div class="caption">Generación workshop</div>
+            </div>
+            <div class="stack">
+              <div class="photo-frame">
+                <img src="assets/diplomas/grupo-diploma.jpg" alt="Grupo de médicos egresados del workshop">
+                <div class="caption">Diplomas reales</div>
+              </div>
+              <div class="photo-frame">
+                <img src="assets/workshop/equipo-bienvenida.jpg" alt="Equipo médico durante bienvenida del workshop">
+                <div class="caption">Comunidad médica</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="pacientes">
+        <div class="wrap volunteer">
+          <div>
+            <div class="eyebrow">Pacientes voluntarios</div>
+            <h2>Buscamos 6 pacientes para la próxima edición.</h2>
+            <p>Los pacientes voluntarios son evaluados previamente por el equipo. La participación está sujeta a valoración médica, indicación clínica y disponibilidad de cupo.</p>
+            <div class="volunteer-list">
+              <div>Valoración inicial del caso.</div>
+              <div>Procedimiento en entorno médico supervisado.</div>
+              <div>Acompañamiento y seguimiento posterior.</div>
+            </div>
+          </div>
+          <div class="photo-frame tall">
+            <img src="assets/diplomas/medicos-geva.jpg" alt="Médicos GeVa en entorno de workshop">
+            <div class="caption">Cercanía médica y seguimiento</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="final" id="aplicar">
+        <div class="wrap final-grid">
+          <div>
+            <div class="eyebrow">Próxima edición</div>
+            <h2>12 médicos. 6 pacientes. Una experiencia clínica intensiva.</h2>
+            <p style="margin-top:22px; max-width:720px;">Solicita información para reservar lugar como médico participante o para postularte como paciente voluntario.</p>
+            <div class="hero-actions" style="margin-top:30px;">
+              <a class="btn primary" href="#formulario">Solicitar información</a>
+              <a class="btn secondary" href="#formulario">Soy paciente voluntario</a>
+            </div>
+          </div>
+          <div class="apply-box" id="formulario">
+            <h3>Solicita información</h3>
+            <p>Completa tus datos y se abrirá un correo con tu solicitud lista para enviar.</p>
+            <form id="leadForm">
+              <div class="form-row">
+                <input name="nombre" placeholder="Nombre" required>
+                <select name="perfil" required>
+                  <option value="">Perfil</option>
+                  <option>Médico participante</option>
+                  <option>Paciente voluntario</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <input name="telefono" placeholder="Teléfono / WhatsApp" required>
+                <input name="email" type="email" placeholder="Email" required>
+              </div>
+              <textarea name="mensaje" placeholder="Cuéntanos brevemente tu interés"></textarea>
+              <button class="btn primary" type="submit">Solicitar información</button>
+              <div class="form-note">Te contactaremos por WhatsApp para confirmar disponibilidad y proceso de inscripción.</div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap footer-inner">
+        <span>Hair Transplant Workshop by GeVa. Presented by PILULA MedPlanner.</span>
+        <img src="assets/logo/pilula-medplanner-light.png" alt="PILULA medplanner">
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("leadForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+      const data = new FormData(event.currentTarget);
+      const body = [
+        "Nombre: " + data.get("nombre"),
+        "Perfil: " + data.get("perfil"),
+        "Teléfono / WhatsApp: " + data.get("telefono"),
+        "Email: " + data.get("email"),
+        "",
+        "Mensaje:",
+        data.get("mensaje") || "Solicito información."
+      ].join("\\n");
+      const subject = encodeURIComponent("Solicitud de información - Hair Transplant Workshop by GeVa");
+      // TODO: reemplazar mailto por Resend/Vercel Function.
+      window.location.href = "mailto:contacto@pilulamedplanner.com?subject=" + subject + "&body=" + encodeURIComponent(body);
+    });
+  </script>
+</body>
+</html>
