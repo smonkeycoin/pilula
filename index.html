@@ -462,7 +462,7 @@
       inset: 0;
       background:
         linear-gradient(90deg, rgba(8,8,8,.95), rgba(8,8,8,.62)),
-        url("assets/workshop/grupo-geva-workshop.jpg") center/cover;
+        url("assets/workshop/workshop-grupo-geva.jpg") center/cover;
       opacity: .96;
     }
     .final .wrap { position: relative; z-index: 1; }
@@ -472,6 +472,29 @@
       gap: 36px;
       align-items: end;
     }
+    .wa-float {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 40;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 1px solid rgba(8,8,8,.16);
+      color: var(--white);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 20px 46px rgba(0,0,0,.22);
+      transition: transform .2s ease, opacity .2s ease;
+    }
+    .wa-float svg {
+      width: 24px;
+      height: 24px;
+      fill: var(--white);
+    }
+    .wa-float:hover { transform: translateY(-3px) scale(1.02); }
     .apply-box {
       border-radius: var(--radius);
       border: 1px solid rgba(196,166,74,.55);
@@ -544,19 +567,29 @@
       .hero-badge { width: calc(50% - 5px); justify-content: center; padding: 0 8px; }
       .photo-frame, .photo-frame.tall { min-height: 300px; }
     }
+
+    @media (max-width: 768px) {
+      .wa-float { display: inline-flex; }
+    }
   </style>
 </head>
 <body>
+  <a class="wa-float" href="https://wa.me/525532019586" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M20.5 3.5A10 10 0 0 0 2.4 15.95L2 21l5.2-.42A10 10 0 1 0 20.5 3.5Zm-8.45 15.4a7.5 7.5 0 0 1-3.8-.98l-.27-.16-3.08.25.33-3 .17-.28a7.46 7.46 0 0 1-1.16-3.96c0-4.16 3.39-7.56 7.56-7.56 2.02 0 3.93.79 5.36 2.2a7.5 7.5 0 0 1 2.2 5.33 7.5 7.5 0 0 1-7.5 7.5Zm4.07-5.61c-.22-.11-1.3-.64-1.5-.71-.2-.08-.35-.11-.5.11-.14.22-.56.71-.68.86-.12.14-.24.16-.46.06-.22-.11-.94-.35-1.79-.98-.66-.45-1.1-1.01-1.23-1.23-.13-.22-.01-.34.1-.46.11-.11.22-.24.33-.36.11-.12.15-.2.22-.34.08-.14.04-.27-.02-.38-.06-.11-.5-1.2-.68-1.64-.18-.43-.36-.37-.5-.38l-.42-.01c-.14 0-.36.05-.55.27-.19.22-.74.72-.74 1.76s.76 2.04.87 2.18c.11.14 1.5 2.3 3.64 3.21 1.24.53 1.74.58 2.36.48.34-.06 1.06-.43 1.21-.85.14-.42.14-.77.1-.85-.03-.08-.11-.14-.23-.2Z"/>
+    </svg>
+  </a>
+
   <div class="page">
     <header class="nav">
       <div class="wrap nav-inner">
         <div class="brand-stack">
-          <img class="workshop-logo" src="assets/logo/hair-transplant-workshop-light.png" alt="Hair Transplant Workshop">
-          <div class="presented">Presented by <img src="assets/logo/pilula-medplanner-light.png" alt="PILULA medplanner"></div>
+          <img class="workshop-logo" src="assets/logo/hair-transplant-logo.png" alt="Hair Transplant Workshop">
+          <div class="presented">Presented by <img src="assets/logo/pilula-logo-white.png" alt="PILULA medplanner"></div>
         </div>
         <div class="nav-actions">
           <a class="btn secondary" href="#pacientes">Soy paciente voluntario</a>
-          <a class="btn primary" href="#aplicar">Solicitar información</a>
+          <a class="btn primary" href="https://wa.me/525532019586" target="_blank" rel="noopener noreferrer">Solicitar información</a>
         </div>
       </div>
     </header>
@@ -564,9 +597,9 @@
     <main>
       <section class="hero" id="inicio">
         <div class="hero-media" aria-hidden="true">
-          <img src="assets/hero/hero-procedimiento-real.jpg" alt="">
-          <video autoplay muted loop playsinline poster="assets/hero/hero-procedimiento-real.jpg">
-            <source src="assets/videos/workshop-hands-on.mp4" type="video/mp4">
+          <img src="assets/hero/hero-01.jpg" alt="">
+          <video autoplay muted loop playsinline poster="assets/hero/hero-01.jpg">
+            <source src="https://res.cloudinary.com/dvwqtmjk0/video/upload/v1781967758/pilula/videos/hero-video.mp4" type="video/mp4">
           </video>
         </div>
         <div class="wrap hero-content">
@@ -577,19 +610,20 @@
             <div class="hero-badges" aria-label="Datos clave del workshop">
               <span class="hero-badge">60 horas</span>
               <span class="hero-badge">4 días hands-on</span>
-              <span class="hero-badge">12 médicos</span>
-              <span class="hero-badge">6 pacientes</span>
+              <span class="hero-badge">16 médicos</span>
+              <span class="hero-badge">8 pacientes</span>
             </div>
             <div class="hero-actions">
-              <a class="btn primary" href="#aplicar">Solicitar información</a>
-              <a class="btn secondary" href="#pacientes">Soy paciente voluntario</a>
+              <a class="btn primary" href="https://wa.me/525532019586" target="_blank" rel="noopener noreferrer">Solicitar información</a>
+              <a class="btn secondary" href="mailto:info@pilula.com.mx">Enviar correo</a>
             </div>
           </div>
           <div class="hero-foot">
             <p class="hero-note">Presentado por PILULA MedPlanner. El protagonista es el método, la práctica clínica y la comunidad médica que se forma alrededor del workshop de GeVa.</p>
             <div class="mini-card">
               <strong>Cupo limitado</strong>
-              <p>La próxima edición está diseñada para 12 médicos y 6 pacientes voluntarios, con atención cercana, práctica real y acompañamiento directo.</p>
+              <p>La próxima edición está diseñada para 16 médicos y 8 pacientes voluntarios, con atención cercana, práctica real y acompañamiento directo.</p>
+              <p>Los cupos se asignan conforme a disponibilidad y confirmación del equipo organizador.</p>
             </div>
           </div>
         </div>
@@ -599,8 +633,8 @@
         <div class="wrap trust-grid">
           <div class="stat"><b>7</b><span>ediciones</span></div>
           <div class="stat"><b>60</b><span>horas</span></div>
-          <div class="stat"><b>12</b><span>médicos</span></div>
-          <div class="stat"><b>6</b><span>pacientes</span></div>
+          <div class="stat"><b>16</b><span>médicos</span></div>
+          <div class="stat"><b>8</b><span>pacientes</span></div>
         </div>
       </aside>
 
@@ -615,16 +649,16 @@
           </div>
           <div class="editorial-grid">
             <div class="photo-frame tall">
-              <img src="assets/workshop/practica-en-aula.jpg" alt="Médicos practicando técnica de microimplante capilar en aula">
+              <img src="assets/workshop/workshop-practica-aula.jpg" alt="Médicos practicando técnica de microimplante capilar en aula">
               <div class="caption">Práctica intensiva en aula</div>
             </div>
             <div class="stack">
               <div class="photo-frame">
-                <img src="assets/workshop/grupo-geva-workshop.jpg" alt="Grupo médico del workshop by GeVa">
+                <img src="assets/workshop/workshop-grupo-geva.jpg" alt="Grupo médico del workshop by GeVa">
                 <div class="caption">Comunidad GeVa</div>
               </div>
               <div class="photo-frame">
-                <img src="assets/workshop/diseno-linea-capilar.jpg" alt="Diseño de línea capilar durante el workshop">
+                <img src="assets/workshop/workshop-diseno-linea-capilar.jpg" alt="Diseño de línea capilar durante el workshop">
                 <div class="caption">Diseño y criterio clínico</div>
               </div>
             </div>
@@ -642,7 +676,7 @@
             <p>GeVa Medicina Capilar aporta el entorno clínico, los protocolos y la dirección médica. El workshop se construye para formar criterio, no sólo repetir pasos.</p>
           </div>
           <div class="geva-strip">
-            <img src="assets/logo/geva-medicina-capilar-light.png" alt="GeVa Medicina Capilar">
+            <img src="assets/logo/geva-logo-white.png" alt="GeVa Medicina Capilar">
             <div>
               <h3>El aprendizaje se vuelve quirúrgico cuando el médico entiende el porqué de cada decisión.</h3>
               <p>Desde valoración y marcaje hasta extracción, clasificación folicular e implantación, la edición está pensada para conectar planeación, técnica y resultado.</p>
@@ -667,13 +701,13 @@
           </div>
           <div class="editorial-grid">
             <div class="photo-frame">
-              <video controls playsinline poster="assets/workshop/masterclass-geva.jpg">
-                <source src="assets/videos/aula-workshop.mp4" type="video/mp4">
+              <video controls playsinline poster="assets/workshop/workshop-masterclass-geva.jpg">
+                <source src="https://res.cloudinary.com/dvwqtmjk0/video/upload/v1781967760/pilula/videos/workshop-aula-video.mp4" type="video/mp4">
               </video>
               <div class="caption">Marcaje, extracción y clasificación</div>
             </div>
             <div class="photo-frame">
-              <img src="assets/workshop/hands-on-implantacion.jpg" alt="Médicas realizando práctica hands-on de implantación capilar">
+              <img src="assets/workshop/workshop-hands-on-implantacion.jpg" alt="Médicas realizando práctica hands-on de implantación capilar">
               <div class="caption">Hands-on con supervisión</div>
             </div>
           </div>
@@ -710,9 +744,9 @@
             <p>Médicos de distintas ciudades comparten lo que les dejó el formato hands-on, el acompañamiento y el contacto con casos reales.</p>
           </div>
           <div class="video-grid">
-            <div class="video-card"><video controls playsinline preload="metadata" src="assets/testimonios/testimonio-medico-01.mp4"></video><div class="video-label">Testimonio médico 01</div></div>
-            <div class="video-card"><video controls playsinline preload="metadata" src="assets/testimonios/testimonio-medico-02.mov"></video><div class="video-label">Testimonio médico 02</div></div>
-            <div class="video-card"><video controls playsinline preload="metadata" src="assets/testimonios/testimonio-medico-03.mov"></video><div class="video-label">Testimonio médico 03</div></div>
+            <div class="video-card"><video controls playsinline preload="metadata" src="https://res.cloudinary.com/dvwqtmjk0/video/upload/v1781967762/pilula/videos/testimonio-medico-01.mp4"></video><div class="video-label">Testimonio médico 01</div></div>
+            <div class="video-card"><video controls playsinline preload="metadata" src="https://res.cloudinary.com/dvwqtmjk0/video/upload/v1781967764/pilula/videos/testimonio-medico-02.mp4"></video><div class="video-label">Testimonio médico 02</div></div>
+            <div class="video-card"><video controls playsinline preload="metadata" src="https://res.cloudinary.com/dvwqtmjk0/video/upload/v1781967766/pilula/videos/testimonio-medico-03.mp4"></video><div class="video-label">Testimonio médico 03</div></div>
           </div>
         </div>
       </section>
@@ -727,8 +761,8 @@
             <p>La edición integra pacientes voluntarios seleccionados para vivir un proceso acompañado por el equipo médico y por los participantes del workshop.</p>
           </div>
           <div class="video-grid patient-grid">
-            <div class="video-card"><video controls playsinline preload="metadata" src="assets/testimonios/testimonio-paciente-01.mov"></video><div class="video-label">Testimonio paciente 01</div></div>
-            <div class="video-card"><video controls playsinline preload="metadata" src="assets/testimonios/testimonio-paciente-02.mov"></video><div class="video-label">Testimonio paciente 02</div></div>
+            <div class="video-card"><video controls playsinline preload="metadata" src="https://res.cloudinary.com/dvwqtmjk0/video/upload/v1781967768/pilula/videos/testimonio-paciente-01.mp4"></video><div class="video-label">Testimonio paciente 01</div></div>
+            <div class="video-card"><video controls playsinline preload="metadata" src="https://res.cloudinary.com/dvwqtmjk0/video/upload/v1781967771/pilula/videos/testimonio-paciente-02.mp4"></video><div class="video-label">Testimonio paciente 02</div></div>
           </div>
         </div>
       </section>
@@ -736,7 +770,7 @@
       <section class="dark">
         <div class="wrap hair-revolution">
           <div class="mark-panel">
-            <img src="assets/workshop/grupo-geva-workshop.jpg" alt="Comunidad médica Hair Revolution">
+            <img src="assets/workshop/workshop-grupo-geva.jpg" alt="Comunidad médica Hair Revolution">
           </div>
           <div>
             <div class="eyebrow">Hair Revolution</div>
@@ -767,7 +801,7 @@
                 <div class="caption">Diplomas reales</div>
               </div>
               <div class="photo-frame">
-                <img src="assets/workshop/equipo-bienvenida.jpg" alt="Equipo médico durante bienvenida del workshop">
+                <img src="assets/workshop/workshop-equipo-bienvenida.jpg" alt="Equipo médico durante bienvenida del workshop">
                 <div class="caption">Comunidad médica</div>
               </div>
             </div>
@@ -779,7 +813,7 @@
         <div class="wrap volunteer">
           <div>
             <div class="eyebrow">Pacientes voluntarios</div>
-            <h2>Buscamos 6 pacientes para la próxima edición.</h2>
+            <h2>Buscamos 8 pacientes para la próxima edición.</h2>
             <p>Los pacientes voluntarios son evaluados previamente por el equipo. La participación está sujeta a valoración médica, indicación clínica y disponibilidad de cupo.</p>
             <div class="volunteer-list">
               <div>Valoración inicial del caso.</div>
@@ -798,10 +832,13 @@
         <div class="wrap final-grid">
           <div>
             <div class="eyebrow">Próxima edición</div>
-            <h2>12 médicos. 6 pacientes. Una experiencia clínica intensiva.</h2>
+            <h2>7ª Edición — 26 al 30 de octubre de 2026</h2>
+            <p style="margin-top:16px; max-width:720px;">Latitud Polanco, Ciudad de México | 26–30 OCT 2026</p>
+            <p style="margin-top:12px; max-width:720px;">Capacidad: 16 médicos y 8 pacientes voluntarios.</p>
+            <p style="margin-top:12px; max-width:720px;">Los cupos se asignan conforme a disponibilidad y confirmación del equipo organizador.</p>
             <p style="margin-top:22px; max-width:720px;">Solicita información para reservar lugar como médico participante o para postularte como paciente voluntario.</p>
             <div class="hero-actions" style="margin-top:30px;">
-              <a class="btn primary" href="#formulario">Solicitar información</a>
+              <a class="btn primary" href="https://wa.me/525532019586" target="_blank" rel="noopener noreferrer">Quiero aplicar</a>
               <a class="btn secondary" href="#formulario">Soy paciente voluntario</a>
             </div>
           </div>
@@ -823,7 +860,12 @@
               </div>
               <textarea name="mensaje" placeholder="Cuéntanos brevemente tu interés"></textarea>
               <button class="btn primary" type="submit">Solicitar información</button>
-              <div class="form-note">Te contactaremos por WhatsApp para confirmar disponibilidad y proceso de inscripción.</div>
+              <div class="form-note">Te contactaremos por WhatsApp para confirmar disponibilidad, requisitos y proceso de inscripción.</div>
+              <div class="form-note">
+                También puedes escribirnos directamente:<br>
+                info@pilula.com.mx<br>
+                +52 55 3201 9586
+              </div>
             </form>
           </div>
         </div>
@@ -833,7 +875,13 @@
     <footer>
       <div class="wrap footer-inner">
         <span>Hair Transplant Workshop by GeVa. Presented by PILULA MedPlanner.</span>
-        <img src="assets/logo/pilula-medplanner-light.png" alt="PILULA medplanner">
+        <div>
+          <img src="assets/logo/pilula-logo-white.png" alt="PILULA medplanner">
+          <div class="form-note" style="margin-top: 8px;">
+            <strong>info@pilula.com.mx</strong><br>
+            <strong>+52 55 3201 9586</strong>
+          </div>
+        </div>
       </div>
     </footer>
   </div>
@@ -853,7 +901,7 @@
       ].join("\\n");
       const subject = encodeURIComponent("Solicitud de información - Hair Transplant Workshop by GeVa");
       // TODO: reemplazar mailto por Resend/Vercel Function.
-      window.location.href = "mailto:contacto@pilulamedplanner.com?subject=" + subject + "&body=" + encodeURIComponent(body);
+      window.location.href = "mailto:info@pilula.com.mx?subject=" + subject + "&body=" + encodeURIComponent(body);
     });
   </script>
 </body>
