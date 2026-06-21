@@ -117,6 +117,24 @@
       white-space: nowrap;
     }
     .presented img { width: 104px; padding: 0; background: transparent; border-radius: 0; opacity: .94; }
+    .logo-wrap {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .logo-fallback {
+      display: none;
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .footer-text .logo-fallback {
+      color: rgba(255,255,255,.82);
+      font-size: 12px;
+    }
     .brand-stack { flex-wrap: wrap; }
     .geva-mark {
       width: 78px;
@@ -661,9 +679,20 @@
     <header class="nav">
       <div class="wrap nav-inner">
         <div class="brand-stack">
-          <img class="workshop-logo" src="assets/logo/hair-transplant-logo.png" alt="Hair Transplant Workshop">
-          <div class="presented">Presented by <img src="assets/logo/pilula-logo-white.png" alt="PILULA medplanner"></div>
-          <img class="geva-mark" src="assets/logo/geva-logo-white.png" alt="GeVa">
+          <span class="logo-wrap">
+            <img class="workshop-logo" src="assets/logo/hair-transplant-logo.png" alt="Hair Transplant Workshop" onerror="this.style.display='none'; if(this.nextElementSibling){this.nextElementSibling.style.display='inline-block';}">
+            <span class="logo-fallback">Hair Transplant Workshop</span>
+          </span>
+          <div class="presented">Presented by
+            <span class="logo-wrap">
+              <img src="assets/logo/pilula-logo-white.png" alt="PILULA medplanner" onerror="this.style.display='none'; if(this.nextElementSibling){this.nextElementSibling.style.display='inline-block';}">
+              <span class="logo-fallback">PILULA</span>
+            </span>
+          </div>
+          <span class="logo-wrap">
+            <img class="geva-mark" src="assets/logo/geva-logo-white.png" alt="GeVa" onerror="this.style.display='none'; if(this.nextElementSibling){this.nextElementSibling.style.display='inline-block';}">
+            <span class="logo-fallback">GeVa</span>
+          </span>
         </div>
         <div class="nav-actions">
           <a class="btn secondary" href="#pacientes">Soy paciente voluntario</a>
@@ -711,6 +740,26 @@
         </div>
       </section>
 
+      <section id="logo-debug" style="padding:40px;background:#111;color:white">
+        <div class="wrap">
+          <h2>Logo debug</h2>
+          <div style="display:flex;flex-wrap:wrap;gap:18px;align-items:center;margin-top:14px">
+            <span class="logo-wrap">
+              <img src="assets/logo/hair-transplant-logo.png" style="max-width:180px;border:1px solid gold" onerror="this.style.display='none'; if(this.nextElementSibling){this.nextElementSibling.style.display='inline-block';}">
+              <span class="logo-fallback" style="display:none">Hair Transplant Workshop</span>
+            </span>
+            <span class="logo-wrap">
+              <img src="assets/logo/pilula-logo-white.png" style="max-width:180px;border:1px solid gold" onerror="this.style.display='none'; if(this.nextElementSibling){this.nextElementSibling.style.display='inline-block';}">
+              <span class="logo-fallback" style="display:none">PILULA</span>
+            </span>
+            <span class="logo-wrap">
+              <img src="assets/logo/geva-logo-white.png" style="max-width:180px;border:1px solid gold" onerror="this.style.display='none'; if(this.nextElementSibling){this.nextElementSibling.style.display='inline-block';}">
+              <span class="logo-fallback" style="display:none">GeVa</span>
+            </span>
+          </div>
+        </div>
+      </section>
+
       <aside class="trust">
         <div class="wrap trust-grid">
           <div class="stat"><b>7</b><span>ediciones</span></div>
@@ -738,10 +787,6 @@
               <div class="photo-frame">
                 <img src="assets/workshop/workshop-grupo-geva.jpg" alt="Grupo médico del workshop by GeVa">
                 <div class="caption">Comunidad GeVa</div>
-              </div>
-              <div class="photo-frame">
-                <img src="assets/workshop/workshop-diseno-linea-capilar.jpg" alt="Diseño de línea capilar durante el workshop">
-                <div class="caption">Diseño y criterio clínico</div>
               </div>
             </div>
           </div>
@@ -958,9 +1003,18 @@
       <div class="wrap footer-inner">
         <div class="footer-brand-block">
           <div class="footer-logos">
-            <img class="logo-workshop" src="assets/logo/hair-transplant-logo.png" alt="Hair Transplant Workshop">
-            <img class="logo-geva" src="assets/logo/geva-logo-white.png" alt="GeVa">
-            <img class="logo-pilula" src="assets/logo/pilula-logo-white.png" alt="PILULA MedPlanner">
+            <span class="logo-wrap">
+              <img class="logo-workshop" src="assets/logo/hair-transplant-logo.png" alt="Hair Transplant Workshop" onerror="this.style.display='none'; if(this.nextElementSibling){this.nextElementSibling.style.display='inline-block';}">
+              <span class="logo-fallback">Hair Transplant Workshop</span>
+            </span>
+            <span class="logo-wrap">
+              <img class="logo-geva" src="assets/logo/geva-logo-white.png" alt="GeVa" onerror="this.style.display='none'; if(this.nextElementSibling){this.nextElementSibling.style.display='inline-block';}">
+              <span class="logo-fallback">GeVa</span>
+            </span>
+            <span class="logo-wrap">
+              <img class="logo-pilula" src="assets/logo/pilula-logo-white.png" alt="PILULA MedPlanner" onerror="this.style.display='none'; if(this.nextElementSibling){this.nextElementSibling.style.display='inline-block';}">
+              <span class="logo-fallback">PILULA</span>
+            </span>
           </div>
           <div class="footer-text">
             <strong>Hair Transplant Workshop by GeVa</strong><br>
