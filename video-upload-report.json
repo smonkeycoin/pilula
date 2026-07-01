@@ -1,0 +1,55 @@
+{
+  "generatedAt": "2026-07-01T17:27:52.989Z",
+  "totalVideos": 7,
+  "uploads": [
+    {
+      "localPath": "assets/videos/hero-video.mp4",
+      "fileName": "hero-video.mp4",
+      "status": "failed",
+      "error": "Archivo no encontrado",
+      "sizeBytes": null
+    },
+    {
+      "localPath": "assets/videos/workshop-aula-video.mp4",
+      "fileName": "workshop-aula-video.mp4",
+      "status": "failed",
+      "error": "Archivo no encontrado",
+      "sizeBytes": null
+    },
+    {
+      "localPath": "assets/testimonios/testimonio-medico-01.mp4",
+      "fileName": "testimonio-medico-01.mp4",
+      "status": "failed",
+      "error": "Archivo no encontrado",
+      "sizeBytes": null
+    },
+    {
+      "localPath": "assets/testimonios/testimonio-medico-02.mp4",
+      "fileName": "testimonio-medico-02.mp4",
+      "status": "failed",
+      "error": "Archivo no encontrado",
+      "sizeBytes": null
+    },
+    {
+      "localPath": "assets/testimonios/testimonio-medico-03.mp4",
+      "fileName": "testimonio-medico-03.mp4",
+      "status": "failed",
+      "error": "Archivo no encontrado",
+      "sizeBytes": null
+    },
+    {
+      "localPath": "assets/testimonios/testimonio-paciente-01.mp4",
+      "fileName": "testimonio-paciente-01.mp4",
+      "status": "failed",
+      "error": "Archivo no encontrado",
+      "sizeBytes": null
+    },
+    {
+      "localPath": "assets/testimonios/testimonio-paciente-02.mp4",
+      "fileName": "testimonio-paciente-02.mp4",
+      "status": "failed",
+      "error": "Archivo no encontrado",
+      "sizeBytes": null
+    }
+  ]
+}
