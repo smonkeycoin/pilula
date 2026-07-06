@@ -100,7 +100,7 @@
     }
     .brand-stack { display: flex; align-items: center; gap: 13px; min-width: 0; }
     .workshop-logo {
-      width: 158px;
+      width: 152px;
       max-height: 46px;
       object-fit: contain;
       filter: drop-shadow(0 8px 20px rgba(0,0,0,.35));
@@ -116,7 +116,7 @@
       letter-spacing: .12em;
       white-space: nowrap;
     }
-    .presented img { width: 104px; padding: 0; background: transparent; border-radius: 0; opacity: .94; }
+    .presented img { width: 94px; padding: 0; background: transparent; border-radius: 0; opacity: .94; }
     .logo-wrap {
       display: inline-flex;
       align-items: center;
@@ -136,12 +136,6 @@
       font-size: 12px;
     }
     .brand-stack { flex-wrap: wrap; }
-    .geva-mark {
-      width: 78px;
-      opacity: .95;
-      object-fit: contain;
-      margin-top: 2px;
-    }
     .nav-actions { display: flex; align-items: center; gap: 10px; }
     .nav .btn { min-height: 42px; padding: 0 19px; font-size: 13px; }
 
@@ -519,7 +513,7 @@
       height: 24px;
       fill: var(--white);
     }
-    .wa-float:hover { transform: translateY(-3px) scale(1.02); }
+    .wa-float:hover { transform: translateY(-3px); }
 
     .hero-contact-mini {
       margin-top: 10px;
@@ -590,23 +584,27 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 16px;
+      justify-content: flex-start;
+      gap: 14px;
     }
-    .footer-logos img {
+    .footer-logo {
       width: auto;
       height: auto;
       object-fit: contain;
     }
-    .footer-logos .logo-workshop {
-      width: 190px;
+    .footer-logo-workshop {
+      max-width: 220px;
       max-height: 52px;
     }
-    .footer-logos .logo-geva {
-      width: 108px;
-      opacity: .92;
+    .footer-logo-geva {
+      max-width: 150px;
+      max-height: 58px;
+      height: auto;
+      width: auto;
+      opacity: .88;
     }
-    .footer-logos .logo-pilula {
-      width: 110px;
+    .footer-logo-pilula {
+      max-width: 120px;
       opacity: .9;
     }
     .footer-contact {
@@ -630,9 +628,12 @@
     @media (max-width: 900px) {
       .nav-inner { height: auto; padding: 12px 0; align-items: flex-start; }
       .brand-stack { flex-direction: column; align-items: flex-start; gap: 8px; }
-      .workshop-logo { width: 150px; }
+      .workshop-logo { width: 146px; }
       .presented { font-size: 9px; }
-      .presented img { width: 96px; }
+      .presented img { width: 90px; }
+      .header-logo-geva { max-width: 110px; max-height: 34px; }
+      .footer-logo-geva { max-width: 120px; }
+      .footer-logo-geva { max-height: 42px; }
       .nav-actions .secondary { display: none; }
       .hero { padding-top: 142px; min-height: 760px; }
       .hero-foot, .section-head, .editorial-grid, .geva-strip, .hair-revolution, .volunteer, .final-grid {
@@ -661,10 +662,48 @@
 
     @media (max-width: 768px) {
       .footer-inner { grid-template-columns: 1fr; }
-      .footer-logos .logo-pilula,
-      .footer-logos .logo-geva,
-      .footer-logos .logo-workshop { width: auto; max-width: 100%; }
-      .footer-logos { align-items: flex-start; }
+      .footer-logos {
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+      }
+      .footer-logo-workshop { max-width: min(78vw, 260px); }
+      .footer-logo-pilula { max-width: min(48vw, 170px); }
+      .footer-logo-geva { max-width: min(40vw, 120px); max-height: 42px; opacity: .86; }
+    }
+
+    @media (max-width: 430px) {
+      .workshop-logo { width: 132px; }
+      .presented img { width: 82px; }
+      .footer-logos { gap: 10px; }
+      .footer-logo-workshop { max-width: min(76vw, 218px); }
+      .footer-logo-pilula { max-width: min(46vw, 145px); }
+      .footer-logo-geva { max-width: min(38vw, 120px); max-height: 42px; }
+    }
+
+    @media (max-width: 390px) {
+      .workshop-logo { width: 124px; }
+      .presented img { width: 78px; }
+      .footer-logo-workshop { max-width: min(80vw, 190px); }
+      .footer-logo-pilula { max-width: min(48vw, 132px); }
+      .footer-logo-geva { max-width: min(38vw, 120px); max-height: 42px; }
+    }
+
+    @media (max-width: 360px) {
+      .workshop-logo { width: 118px; }
+      .presented img { width: 74px; }
+      .footer-logos { gap: 8px; }
+      .footer-logo-workshop { max-width: min(84vw, 176px); }
+      .footer-logo-pilula { max-width: min(50vw, 124px); }
+      .footer-logo-geva { max-width: min(40vw, 120px); max-height: 42px; }
+    }
+
+    .header-logo-geva {
+      max-width: 130px;
+      max-height: 44px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
     }
   </style>
 </head>
@@ -690,7 +729,7 @@
             </span>
           </div>
           <span class="logo-wrap">
-            <img class="geva-mark" src="assets/logo/geva-logo-white.png" alt="GeVa" onerror="this.style.display='none'; if(this.nextElementSibling){this.nextElementSibling.style.display='inline-block';}">
+            <img class="footer-logo footer-logo-geva header-logo-geva" src="assets/logo/geva-logo-white.png" alt="GeVa Medicina Capilar" onerror="this.style.display='none'; if(this.nextElementSibling){this.nextElementSibling.style.display='inline-block';}">
             <span class="logo-fallback">GeVa</span>
           </span>
         </div>
@@ -742,7 +781,7 @@
 
       <section id="logo-debug" style="padding:40px;background:#111;color:white">
         <div class="wrap">
-          <h2>Hair Revolution</h2>
+          <h2>Logo debug</h2>
           <div style="display:flex;flex-wrap:wrap;gap:18px;align-items:center;margin-top:14px">
             <span class="logo-wrap">
               <img src="assets/logo/hair-transplant-logo.png" style="max-width:180px;border:1px solid gold" onerror="this.style.display='none'; if(this.nextElementSibling){this.nextElementSibling.style.display='inline-block';}">
@@ -872,7 +911,7 @@
           </div>
           <div class="video-grid">
             <div class="video-card"><video controls playsinline preload="metadata" src="https://res.cloudinary.com/dvwqtmjk0/video/upload/v1781967762/pilula/videos/testimonio-medico-01.mp4"></video><div class="video-label">Testimonio médico 01</div></div>
-            <div class="video-card"><video controls playsinline preload="metadata" src="https://res.cloudinary.com/dvwqtmjk0/video/upload/v1782923984/testimonio-medico-02_jefcqo.mov"></video><div class="video-label">Testimonio médico 02</div></div>
+            <div class="video-card"><video controls playsinline preload="metadata" src="https://res.cloudinary.com/dvwqtmjk0/video/upload/v1781967764/pilula/videos/testimonio-medico-02.mp4"></video><div class="video-label">Testimonio médico 02</div></div>
             <div class="video-card"><video controls playsinline preload="metadata" src="https://res.cloudinary.com/dvwqtmjk0/video/upload/v1781967766/pilula/videos/testimonio-medico-03.mp4"></video><div class="video-label">Testimonio médico 03</div></div>
           </div>
         </div>
@@ -888,8 +927,8 @@
             <p>La edición integra pacientes voluntarios seleccionados para vivir un proceso acompañado por el equipo médico y por los participantes del workshop.</p>
           </div>
           <div class="video-grid patient-grid">
-            <div class="video-card"><video controls playsinline preload="metadata" src="https://res.cloudinary.com/dvwqtmjk0/video/upload/f_mp4,q_auto/v1782925170/testimonio-paciente-01_y5ravh.mov"></video><div class="video-label">Testimonio paciente 01</div></div>
-            <div class="video-card"><video controls playsinline preload="metadata" src="https://res.cloudinary.com/dvwqtmjk0/video/upload/v1782924154/testimonio-paciente-02_n7qaay.mov"></video><div class="video-label">Testimonio paciente 02</div></div>
+            <div class="video-card"><video controls playsinline preload="metadata" src="https://res.cloudinary.com/dvwqtmjk0/video/upload/v1781967768/pilula/videos/testimonio-paciente-01.mp4"></video><div class="video-label">Testimonio paciente 01</div></div>
+            <div class="video-card"><video controls playsinline preload="metadata" src="https://res.cloudinary.com/dvwqtmjk0/video/upload/v1781967771/pilula/videos/testimonio-paciente-02.mp4"></video><div class="video-label">Testimonio paciente 02</div></div>
           </div>
         </div>
       </section>
@@ -897,7 +936,7 @@
       <section class="dark">
         <div class="wrap hair-revolution">
           <div class="mark-panel">
-            <img src="assets/workshop/footer.jpg" alt="Comunidad médica Hair Revolution">
+            <img src="assets/workshop/workshop-grupo-geva.jpg" alt="Comunidad médica Hair Revolution">
           </div>
           <div>
             <div class="eyebrow">Hair Revolution</div>
@@ -920,16 +959,16 @@
           <div class="editorial-grid">
             <div class="photo-frame tall">
               <img src="assets/diplomas/graduacion-diplomas.jpg" alt="Generación de médicos con diplomas del workshop">
-              <div class="caption">Diplomas reales</div>
+              <div class="caption">Generación workshop</div>
             </div>
             <div class="stack">
               <div class="photo-frame">
                 <img src="assets/diplomas/grupo-diploma.jpg" alt="Grupo de médicos egresados del workshop">
-                <div class="caption">Comunidad médica</div>
+                <div class="caption">Diplomas reales</div>
               </div>
               <div class="photo-frame">
                 <img src="assets/workshop/workshop-equipo-bienvenida.jpg" alt="Equipo médico durante bienvenida del workshop">
-                <div class="caption">Generación workshop</div>
+                <div class="caption">Comunidad médica</div>
               </div>
             </div>
           </div>
@@ -1004,15 +1043,15 @@
         <div class="footer-brand-block">
           <div class="footer-logos">
             <span class="logo-wrap">
-              <img class="logo-workshop" src="assets/logo/hair-transplant-logo.png" alt="Hair Transplant Workshop" onerror="this.style.display='none'; if(this.nextElementSibling){this.nextElementSibling.style.display='inline-block';}">
+              <img class="footer-logo footer-logo-workshop" src="assets/logo/hair-transplant-logo.png" alt="Hair Transplant Workshop" onerror="this.style.display='none'; if(this.nextElementSibling){this.nextElementSibling.style.display='inline-block';}">
               <span class="logo-fallback">Hair Transplant Workshop</span>
             </span>
             <span class="logo-wrap">
-              <img class="logo-geva" src="assets/logo/geva-logo-white.png" alt="GeVa" onerror="this.style.display='none'; if(this.nextElementSibling){this.nextElementSibling.style.display='inline-block';}">
+              <img class="footer-logo footer-logo-geva" src="assets/logo/geva-logo-white.png" alt="GeVa Medicina Capilar" onerror="this.style.display='none'; if(this.nextElementSibling){this.nextElementSibling.style.display='inline-block';}">
               <span class="logo-fallback">GeVa</span>
             </span>
             <span class="logo-wrap">
-              <img class="logo-pilula" src="assets/logo/pilula-logo-white.png" alt="PILULA MedPlanner" onerror="this.style.display='none'; if(this.nextElementSibling){this.nextElementSibling.style.display='inline-block';}">
+              <img class="footer-logo footer-logo-pilula" src="assets/logo/pilula-logo-white.png" alt="PILULA MedPlanner" onerror="this.style.display='none'; if(this.nextElementSibling){this.nextElementSibling.style.display='inline-block';}">
               <span class="logo-fallback">PILULA</span>
             </span>
           </div>
