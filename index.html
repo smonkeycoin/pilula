@@ -548,6 +548,15 @@
     .hero-badges::after {
       content: none !important;
     }
+    .hero img:not([src]),
+    .hero img[src=""],
+    .hero img[src="#"],
+    .hero img[src="undefined"],
+    .hero img[src*="undefined"],
+    .hero img[src*="null"],
+    .hero img[alt="?"] {
+      display: none !important;
+    }
     .apply-box {
       border-radius: var(--radius);
       border: 1px solid rgba(196,166,74,.55);
@@ -1083,7 +1092,24 @@
     </footer>
   </div>
 
+  <!-- mobile broken image guard -->
   <script>
+    (function () {
+      function hideBrokenImage(img) {
+        img.style.display = 'none';
+        img.setAttribute('data-broken-hidden', 'true');
+      }
+      document.querySelectorAll('img').forEach(function (img) {
+        if (!img.getAttribute('src') || img.getAttribute('src') === '#' || img.getAttribute('src') === 'undefined') {
+          hideBrokenImage(img);
+          return;
+        }
+        img.addEventListener('error', function () {
+          hideBrokenImage(img);
+        });
+      });
+    })();
+
     document.getElementById("leadForm").addEventListener("submit", function (event) {
       event.preventDefault();
       const data = new FormData(event.currentTarget);
