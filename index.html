@@ -536,6 +536,18 @@
       color: var(--white);
       border-bottom-color: var(--white);
     }
+    .hero-badges {
+      isolation: isolate;
+    }
+    .hero-badges img {
+      display: none;
+    }
+    .hero-badges [alt]::before,
+    .hero-badges [alt]::after,
+    .hero-badges::before,
+    .hero-badges::after {
+      content: none !important;
+    }
     .apply-box {
       border-radius: var(--radius);
       border: 1px solid rgba(196,166,74,.55);
